@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace CheatSheet
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            General.NullCoalescingOperator();
+            var res = await Async.ReturnAsyncInt();
+            Console.WriteLine(res);
+            Console.Read();
         }
     }
 }
