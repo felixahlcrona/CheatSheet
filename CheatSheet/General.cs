@@ -24,7 +24,7 @@ namespace CheatSheet
 
         public static void NullCoalescingOperator()
         {
-            // Använd ?? för sätta null värden till default värde 
+            // Använd ?? för sätta null värden till default värde.
             Person person = null;
             var name = person?.Name ?? "default name";
         }
