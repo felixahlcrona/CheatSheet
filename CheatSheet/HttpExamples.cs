@@ -9,7 +9,9 @@ namespace CheatSheet
 {
     public class HttpExamples
     {
-
+        // Check network tab
+        // Rightclick XHR command, "Copy as Curl(bash)" 
+        // paste in postman and generate code.
         public static async Task HttpClientGetGoogleImages()
         {
             var _clientFactory = new HttpClient();
