@@ -8,8 +8,11 @@ namespace CheatSheet
         static async Task Main(string[] args)
         {
             //General.NullCoalescingOperator();
-            //var res = await Async.ReturnAsyncInt();
-            //Console.WriteLine(res);
+          
+                var res = await Async.ReturnAsyncInt();
+                Console.WriteLine(res);
+         
+           
             //await HttpExamples.HttpClientGetGoogleImages();
             Console.Read();
         }
