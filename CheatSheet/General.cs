@@ -14,6 +14,12 @@ namespace CheatSheet
             Friday
         }
 
+        public static void AnonymousType()
+        {
+            var student = new { Id = 1, FirstName = "James"};
+            Console.WriteLine(student.Id); //output: 1
+            Console.WriteLine(student.FirstName); //output: James
+        }
         public static void NULLConditionalOperator()
         {
             // Använd ? innan för värden som kan vara NULL
