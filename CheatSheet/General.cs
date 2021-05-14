@@ -34,6 +34,17 @@ namespace CheatSheet
             Person person = null;
             var name = person?.Name ?? "default name";
         }
+        public static void TernaryOperator()
+        {
+            //Kortare variant av if else
+            int x = 20, y = 10;
+            var result = x > y ? "x is greater than y" : "x is less than y";
+
+            Console.WriteLine(result);
+            //x is greater than y
+        }
+
+
 
         static (string name, int age) NamedTuples()
         {
