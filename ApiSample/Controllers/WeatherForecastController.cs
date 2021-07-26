@@ -18,7 +18,10 @@ namespace ApiSample.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
-
+        public class Drink
+        {
+            public int price { get; set; }
+        }
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
@@ -26,8 +29,10 @@ namespace ApiSample.Controllers
             _logger = logger;
         }
 
+
+        [Route("GetRequestSingleton")]
         [HttpGet]
-        public async Task<string> GetAsync()
+        public async Task<string> GetRequestSingleton()
         {
             HttpResponseMessage response = await _client.GetAsync("http://www.google.com/");
             response.EnsureSuccessStatusCode();
@@ -36,10 +41,18 @@ namespace ApiSample.Controllers
             return responseBody;
         }
 
-        public class Drink
+        [Route("GetRequestNewInstance")]
+        [HttpGet]
+        public async Task<string> GetRequestNewInstance()
         {
-            public int price { get; set; }
+            HttpClient localClient = new HttpClient();
+            HttpResponseMessage response = await localClient.GetAsync("http://www.google.com/");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+            return responseBody;
         }
+     
         [HttpPost]
         public string PostAsync(Drink data)
         {

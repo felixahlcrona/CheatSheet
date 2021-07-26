@@ -10,6 +10,7 @@ namespace BenchmarkExample
     [MemoryDiagnoser]
     public class Benchmark
     {
+        // Benchmark .net example and K6 HTTP loadtesting
         // Benchmarkes methods, just use the [Benchmark] annotation on a method.
         // Always run as Release mode
         static void Main(string[] args)
