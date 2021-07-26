@@ -10,4 +10,10 @@ namespace CheatSheet.Model
     {
         public string Name { get; set; }
     }
+    enum DayOfWeek
+    {
+        Monday,
+        Friday
+    }
+
 }
