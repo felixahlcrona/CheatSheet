@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Net.Http;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using CheatSheet.Model;
+using Newtonsoft.Json;
 using Serilog;
 
 namespace CheatSheet
@@ -44,8 +48,6 @@ namespace CheatSheet
             //x is greater than y
         }
 
-
-
         static (string name, int age) NamedTuples()
         {
             var name = "John hopkinss";
@@ -65,7 +67,6 @@ namespace CheatSheet
         }
 
 
-
         public static void SeriLogExample(string message)
         {
             var log = new LoggerConfiguration()
@@ -76,8 +77,18 @@ namespace CheatSheet
             log.Information("LogMessage : {message} ", message);
         }
 
+        public static async Task ThreadedTask(string thread)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                HttpClient _client = new HttpClient();
+                var res = await _client.GetAsync("http://www.google.com/");
 
+                Console.WriteLine($"Get request done from {thread}");
+            }
+           
+   
+        }
 
-     
     }
 }

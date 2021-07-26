@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CheatSheet
@@ -7,13 +8,14 @@ namespace CheatSheet
     {
         static async Task Main(string[] args)
         {
-            General.AnonymousType();
 
-            var res = await Async.ReturnAsyncInt();
-            Console.WriteLine(res);
+            General.SeriLogExample("write to log");
 
-
-            //await HttpExamples.HttpClientGetGoogleImages();
+            Task task1 = Task.Factory.StartNew(() => General.ThreadedTask("task1"));
+            Task task2 = Task.Factory.StartNew(() => General.ThreadedTask("task2"));
+            
+    
+            Console.WriteLine();
             Console.Read();
         }
     }
