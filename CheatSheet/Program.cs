@@ -98,5 +98,16 @@ namespace CheatSheet
 
 
         }
+
+        public static void FindColumnBySQlTable()
+        {
+            
+            // Går att söka efter kolumn i hela databasen.
+
+            //SELECT Table_Name, Column_Name 
+            //FROM INFORMATION_SCHEMA.COLUMNS
+            //WHERE TABLE_CATALOG = 'databasename'
+            //AND COLUMN_NAME LIKE '%column%'
+        }
     }
 }
