@@ -8,7 +8,7 @@ using DayOfWeek = CheatSheet.Model.DayOfWeek;
 
 namespace CheatSheet
 {
-    class Program
+   public class Program
     {
         private static string _startupPath = AppDomain.CurrentDomain.BaseDirectory;
         static async Task Main(string[] args)
@@ -18,15 +18,21 @@ namespace CheatSheet
 
             Task task1 = Task.Factory.StartNew(() => ThreadedTask("task1"));
             Task task2 = Task.Factory.StartNew(() => ThreadedTask("task2"));
-            
-    
+
             Console.WriteLine();
             Console.Read();
         }
 
       
+        public static double CalculatorAddTest(double x, double y)
+        {
+            return x + y;
+        }
+        public static string StringReturnNameTest(string x)
+        {
+            return x;
+        }
 
-    
         public static void AnonymousType()
         {
             var student = new { Id = 1, FirstName = "James" };
@@ -39,7 +45,6 @@ namespace CheatSheet
             Person person = null;
             var res = person?.Name;
         }
-
 
         public static void NullCoalescingOperator()
         {

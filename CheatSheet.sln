@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheatSheet", "CheatSheet\CheatSheet.csproj", "{C3D35727-084E-421F-9186-9B4D442EF458}"
 EndProject
@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpRequest", "HttpRequest\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkExample", "BenchmarkExample\BenchmarkExample.csproj", "{6F60D356-6403-4447-A059-6047027AC4EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlAgilityPack", "HtmlAgilityPack\HtmlAgilityPack.csproj", "{CF05B6D7-74E2-41B1-A527-63B600A606D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlAgilityPack", "HtmlAgilityPack\HtmlAgilityPack.csproj", "{CF05B6D7-74E2-41B1-A527-63B600A606D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{02F1F597-22A4-4D42-B08B-0D1CAD5B4F70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{CF05B6D7-74E2-41B1-A527-63B600A606D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF05B6D7-74E2-41B1-A527-63B600A606D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF05B6D7-74E2-41B1-A527-63B600A606D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F1F597-22A4-4D42-B08B-0D1CAD5B4F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F1F597-22A4-4D42-B08B-0D1CAD5B4F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F1F597-22A4-4D42-B08B-0D1CAD5B4F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F1F597-22A4-4D42-B08B-0D1CAD5B4F70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
