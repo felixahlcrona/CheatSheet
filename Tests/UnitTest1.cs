@@ -16,7 +16,7 @@ namespace Tests
             double expected = 2;
 
             //Act
-            var answer = Program.CalculatorAddTest(1, 1);
+            var answer = CheatSheet.CheatSheet.CalculatorAddTest(1, 1);
 
             //Assert
 
@@ -30,7 +30,7 @@ namespace Tests
         {
 
             //Act
-            var answer = Program.CalculatorAddTest(1, 1);
+            var answer = CheatSheet.CheatSheet.CalculatorAddTest(1, 1);
 
             //Assert
             Assert.IsType<double>(answer);
@@ -45,7 +45,7 @@ namespace Tests
             string expected = "john";
 
             //Act
-            var answer = Program.StringReturnNameTest("john");
+            var answer = CheatSheet.CheatSheet.StringReturnNameTest("john");
 
             //Assert
             Assert.Equal(expected, answer);
@@ -62,7 +62,7 @@ namespace Tests
         {
           
             //Act
-            var answer = Program.StringReturnNameTest(value);
+            var answer = CheatSheet.CheatSheet.StringReturnNameTest(value);
 
             //Assert
             Assert.NotNull(answer);

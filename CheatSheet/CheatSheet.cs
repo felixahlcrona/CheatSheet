@@ -8,40 +8,49 @@ using DayOfWeek = CheatSheet.Model.DayOfWeek;
 
 namespace CheatSheet
 {
-   public class Program
+   public class CheatSheet
     {
         private static string _startupPath = AppDomain.CurrentDomain.BaseDirectory;
         static async Task Main(string[] args)
         {
 
-            SeriLogExample("write to log");
+            NullCoalescingOperator();
 
-            Task task1 = Task.Factory.StartNew(() => ThreadedTask("task1"));
-            Task task2 = Task.Factory.StartNew(() => ThreadedTask("task2"));
+            //Task task1 = Task.Factory.StartNew(() => ThreadedTask("task1"));
+            //Task task2 = Task.Factory.StartNew(() => ThreadedTask("task2"));
 
             Console.WriteLine();
             Console.Read();
         }
 
-      
-        public static double CalculatorAddTest(double x, double y)
-        {
-            return x + y;
-        }
-        public static string StringReturnNameTest(string x)
-        {
-            return x;
-        }
+        public static void ObjectCreation()
+        {          
+            var person0 = new Person();
+            Person book1 = new Person();
 
+            //C# 9 Feature
+            // New way
+            Person personNew = new();   
+
+        }
+       public static void StringInterpolation()
+        {
+            string name = "Mark";
+            var date = DateTime.Now;
+            // Composite formatting:
+            Console.WriteLine("Hello, {0}! Today is {1}, it's {2:HH:mm} now.", name, date.DayOfWeek, date);
+            // String interpolation:
+            Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}, it's {date:HH:mm} now.");
+        }
         public static void AnonymousType()
         {
             var student = new { Id = 1, FirstName = "James" };
             Console.WriteLine(student.Id); //output: 1
             Console.WriteLine(student.FirstName); //output: James
         }
-        public static void NULLConditionalOperator()
+        public static void NullConditionalOperator()
         {
-            // Använd ? innan för värden som kan vara NULL
+            // Använd ? innan för värden som kan vara NULL. Så om name inte finns så får man inget exception error
             Person person = null;
             var res = person?.Name;
         }
@@ -51,6 +60,7 @@ namespace CheatSheet
             // Använd ?? för sätta null värden till default värde.
             Person person = null;
             var name = person?.Name ?? "default name";
+
         }
         public static void TernaryOperator()
         {
@@ -90,6 +100,16 @@ namespace CheatSheet
 
             log.Information("LogMessage : {message} ", message);
         }
+
+        public static double CalculatorAddTest(double x, double y)
+        {
+            return x + y;
+        }
+        public static string StringReturnNameTest(string x)
+        {
+            return x;
+        }
+
 
         public static async Task ThreadedTask(string thread)
         {
