@@ -1,6 +1,7 @@
 ﻿using CheatSheet.Model;
 using Serilog;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,6 +22,18 @@ namespace CheatSheet
 
             Console.WriteLine();
             Console.Read();
+        }
+
+
+        // Generisk metod. Kan lägga till (int,int) i en lista eller (string, string) t ex.
+        //ReturnGenricArray(32, 12);
+        //ReturnGenricArray("hej", "hopp");
+        public static List<T> ReturnGenricArray<T>(T elementOne, T elementTwo)
+        {
+            List<T> result = new List<T>();
+            result.Add(elementOne);
+            result.Add(elementTwo); 
+            return result;
         }
 
         public static void ObjectCreation()
