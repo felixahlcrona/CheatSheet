@@ -3,6 +3,7 @@ using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using DayOfWeek = CheatSheet.Model.DayOfWeek;
@@ -19,11 +20,35 @@ namespace CheatSheet
 
             //Task task1 = Task.Factory.StartNew(() => ThreadedTask("task1"));
             //Task task2 = Task.Factory.StartNew(() => ThreadedTask("task2"));
-
+            JsonSerializeObject();
+            JsonDeSerializeObject();
             Console.WriteLine();
             Console.Read();
         }
 
+
+
+        // använd System.Text.Json; nyaste.
+        public static string JsonSerializeObject()
+        {
+            Person person = new Person() { Age= 19, Name="Peter"};
+           
+            string jsonString = JsonSerializer.Serialize(person);
+            return jsonString;
+        }
+
+        public static Person JsonDeSerializeObject()
+        {
+            string jsonString =
+                            @"{
+                              ""Name"": ""Peter"",
+                              ""Age"": 25
+                            }
+                            ";
+            Person person = JsonSerializer.Deserialize<Person>(jsonString);
+            return person;
+        }
+ 
 
         // Generisk metod. Kan lägga till (int,int) i en lista eller (string, string) t ex.
         //ReturnGenricArray(32, 12);
