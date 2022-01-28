@@ -61,6 +61,16 @@ namespace CheatSheet
             return result;
         }
 
+        public static void DateAndTimeOnly()
+        {
+            // C# 10, få ut endast date eller bara tid utav en datetime
+            DateTime dateTime = DateTime.Now;
+
+            DateOnly dateOnly = DateOnly.FromDateTime(dateTime);
+            TimeOnly timeOnly = TimeOnly.FromDateTime(dateTime);
+
+        }
+
         public static void ObjectCreation()
         {          
             var person0 = new Person();
