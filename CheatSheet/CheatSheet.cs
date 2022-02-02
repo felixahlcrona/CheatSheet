@@ -2,6 +2,7 @@
 using Serilog;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
@@ -18,10 +19,10 @@ namespace CheatSheet
 
             NullCoalescingOperator();
 
+            LINQIntersect();
             //Task task1 = Task.Factory.StartNew(() => ThreadedTask("task1"));
             //Task task2 = Task.Factory.StartNew(() => ThreadedTask("task2"));
-            JsonSerializeObject();
-            JsonDeSerializeObject();
+
             Console.WriteLine();
             Console.Read();
         }
@@ -50,6 +51,34 @@ namespace CheatSheet
         }
  
 
+        // Sätt ihop två listor som har gemensama värden,
+        // i detta fall kommer endast Jonas och Peter finnas i "results"
+        public static void LINQIntersect()
+        {
+            IList<string> strList1 = new List<string>() { "Jonas", "Peter", "Max" };
+            IList<string> strList2 = new List<string>() { "Jonas", "Peter", "Eva"};
+            var result = strList1.Intersect(strList2);
+
+            foreach (string str in result)
+                Console.WriteLine(str);
+        }
+
+
+        // Sätter ihop alla värden från två listor till en lista
+        // Resultat blir Eva,Peter,Max
+        public static void LINQConcat()
+        {
+            IList<string> collection1 = new List<string>() { "Eva", "Peter" };
+            IList<string> collection2 = new List<string>() { "Max"};
+
+            var collection3 = collection1.Concat(collection2);
+
+            foreach (string str in collection3)
+                Console.WriteLine(str);
+        }
+
+
+        
         // Generisk metod. Kan lägga till (int,int) i en lista eller (string, string) t ex.
         //ReturnGenricArray(32, 12);
         //ReturnGenricArray("hej", "hopp");
@@ -137,7 +166,8 @@ namespace CheatSheet
             }
             return res;
         }
-
+        
+     
 
         public static void SeriLogExample(string message)
         {
