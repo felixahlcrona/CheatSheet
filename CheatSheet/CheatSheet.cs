@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
-using System.Threading;
 using System.Threading.Tasks;
 using DayOfWeek = CheatSheet.Model.DayOfWeek;
 
@@ -150,6 +149,16 @@ namespace CheatSheet
             // Använd ?? för sätta null värden till default värde.
             Person person = null;
             var name = person?.Name ?? "default name";
+
+        }
+        public static void NullCoalescingForEach()
+        {
+            List<Person> persons = new List<Person>();
+
+            foreach (var item in persons ?? Enumerable.Empty<Person>())
+            {
+                // Bra i Blazor om man försöker göra något med en tom lista.
+            }
 
         }
         public static void TernaryOperator()
