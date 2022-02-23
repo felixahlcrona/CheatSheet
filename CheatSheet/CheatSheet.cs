@@ -11,7 +11,7 @@ using DayOfWeek = CheatSheet.Model.DayOfWeek;
 
 namespace CheatSheet
 {
-   public class CheatSheet
+    public class CheatSheet
     {
         private static string _startupPath = AppDomain.CurrentDomain.BaseDirectory;
         static async Task Main(string[] args)
@@ -32,8 +32,8 @@ namespace CheatSheet
         // använd System.Text.Json; nyaste.
         public static string JsonSerializeObject()
         {
-            Person person = new Person() { Age= 19, Name="Peter"};
-           
+            Person person = new Person() { Age = 19, Name = "Peter" };
+
             string jsonString = JsonSerializer.Serialize(person);
             return jsonString;
         }
@@ -49,14 +49,14 @@ namespace CheatSheet
             Person person = JsonSerializer.Deserialize<Person>(jsonString);
             return person;
         }
- 
+
 
         // Sätt ihop två listor som har gemensama värden,
         // i detta fall kommer endast Jonas och Peter finnas i "results"
         public static void LINQIntersect()
         {
             IList<string> strList1 = new List<string>() { "Jonas", "Peter", "Max" };
-            IList<string> strList2 = new List<string>() { "Jonas", "Peter", "Eva"};
+            IList<string> strList2 = new List<string>() { "Jonas", "Peter", "Eva" };
             var result = strList1.Intersect(strList2);
 
             foreach (string str in result)
@@ -69,7 +69,7 @@ namespace CheatSheet
         public static void LINQConcat()
         {
             IList<string> collection1 = new List<string>() { "Eva", "Peter" };
-            IList<string> collection2 = new List<string>() { "Max"};
+            IList<string> collection2 = new List<string>() { "Max" };
 
             var collection3 = collection1.Concat(collection2);
 
@@ -78,7 +78,7 @@ namespace CheatSheet
         }
 
 
-        
+
         // Generisk metod. Kan lägga till (int,int) i en lista eller (string, string) t ex.
         //ReturnGenricArray(32, 12);
         //ReturnGenricArray("hej", "hopp");
@@ -86,7 +86,7 @@ namespace CheatSheet
         {
             List<T> result = new List<T>();
             result.Add(elementOne);
-            result.Add(elementTwo); 
+            result.Add(elementTwo);
             return result;
         }
 
@@ -101,16 +101,16 @@ namespace CheatSheet
         }
 
         public static void ObjectCreation()
-        {          
+        {
             var person0 = new Person();
             Person book1 = new Person();
 
             //C# 9 Feature
             // New way
-            Person personNew = new();   
+            Person personNew = new();
 
         }
-       public static void StringInterpolation()
+        public static void StringInterpolation()
         {
             string name = "Mark";
             var date = DateTime.Now;
@@ -119,6 +119,19 @@ namespace CheatSheet
             // String interpolation:
             Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}, it's {date:HH:mm} now.");
         }
+
+        public static void StringInterpolationStringFormat()
+        {
+            //            @foreach(var item in cultures)
+            //        {
+            //            < MudSelectItem Value = "@(item.Key)" >
+
+            //                 < img src = "@String.Format(" /{ 0}.svg", item.Key)" height = "14" class="mr-1" /> @item.Value
+            //</MudSelectItem>
+            //    }
+
+        }
+
         public static void AnonymousType()
         {
             var student = new { Id = 1, FirstName = "James" };
@@ -166,8 +179,8 @@ namespace CheatSheet
             }
             return res;
         }
-        
-     
+
+
 
         public static void SeriLogExample(string message)
         {
@@ -204,7 +217,7 @@ namespace CheatSheet
 
         public static void FindColumnBySQlTable()
         {
-            
+
             // Går att söka efter kolumn i hela databasen.
 
             //SELECT Table_Name, Column_Name 

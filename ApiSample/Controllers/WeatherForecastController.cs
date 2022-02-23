@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace ApiSample.Controllers
     {
         public static HttpClient _client = new HttpClient();
 
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -23,12 +25,26 @@ namespace ApiSample.Controllers
             public int price { get; set; }
         }
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IConfiguration configuration;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            this.configuration = configuration;
         }
 
+        [Route("GetAppSettings")]
+        [HttpGet]
+        public async Task GetAppSettings()
+        {
+            // Få ut en parentnod ur appsettings
+            var userName = configuration["Humans:name"];
+
+            // Få ut Dictionary av appsettings
+            Dictionary<string, string> cultures;
+            cultures = configuration.GetSection("Cultures").GetChildren().ToDictionary(x => x.Key, x => x.Value);
+
+        }
 
         [Route("GetRequestSingleton")]
         [HttpGet]
