@@ -15,6 +15,8 @@ namespace CheatSheet
         private static string _startupPath = AppDomain.CurrentDomain.BaseDirectory;
         static async Task Main(string[] args)
         {
+            // Get variable from appsettings in a azure function
+            //%name%
 
             //DevBranch
             NullCoalescingOperator();
