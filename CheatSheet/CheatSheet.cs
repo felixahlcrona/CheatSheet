@@ -24,10 +24,11 @@ namespace CheatSheet
             LINQIntersect();
             //Task task1 = Task.Factory.StartNew(() => ThreadedTask("task1"));
             //Task task2 = Task.Factory.StartNew(() => ThreadedTask("task2"));
-
+            JsonSerializeObject();
             Console.WriteLine();
             Console.Read();
         }
+
 
 
 
@@ -35,9 +36,14 @@ namespace CheatSheet
         public static string JsonSerializeObject()
         {
             Person person = new Person() { Age = 19, Name = "Peter" };
+            Person person2 = new Person() { Age = 29, Name = "Jonas" };
+            string jsonObject = JsonSerializer.Serialize(person);
 
-            string jsonString = JsonSerializer.Serialize(person);
-            return jsonString;
+
+            List<Person> list = new List<Person>() { person, person2 };
+            string jsonList = JsonSerializer.Serialize(list);
+
+            return jsonObject;
         }
 
         public static Person JsonDeSerializeObject()
