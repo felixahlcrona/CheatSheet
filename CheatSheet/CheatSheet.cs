@@ -18,19 +18,25 @@ namespace CheatSheet
             // Get variable from appsettings in a azure function
             //%name%
 
-            //DevBranch
-            NullCoalescingOperator();
-
-            LINQIntersect();
-            //Task task1 = Task.Factory.StartNew(() => ThreadedTask("task1"));
-            //Task task2 = Task.Factory.StartNew(() => ThreadedTask("task2"));
-            JsonSerializeObject();
+            var numberOfDevices = 3;
             Console.WriteLine();
+            var randomNumber = RandomNumber(1, 50);
+            var randomString = RandomString(5);
             Console.Read();
         }
 
+        private static int RandomNumber(int a, int b)
+        {
+            var number = Random.Shared.Next(a, b);
+            return number;
+        }
 
-
+        private static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[Random.Shared.Next(s.Length)]).ToArray());
+        }
 
         // använd System.Text.Json; nyaste.
         public static string JsonSerializeObject()
@@ -113,7 +119,7 @@ namespace CheatSheet
             var person0 = new Person();
             Person book1 = new Person();
 
-            //C# 9 Feature
+            //C# 9 Feature  
             // New way
             Person personNew = new();
 
