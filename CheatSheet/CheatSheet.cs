@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using DayOfWeek = CheatSheet.Model.DayOfWeek;
 
@@ -18,13 +19,43 @@ namespace CheatSheet
             // Get variable from appsettings in a azure function
             //%name%
 
-            var numberOfDevices = 3;
             Console.WriteLine();
-            var randomNumber = RandomNumber(1, 50);
-            var randomString = RandomString(5);
             Console.Read();
         }
 
+
+
+        public static void NameOfJsonContains()
+        {
+            string jsonString =
+                            @"{
+                              ""Name"": ""Peter"",
+                              ""Age"": 25
+                            }
+                            ";
+            var jsonObj = JsonNode.Parse(jsonString).AsObject();
+
+            //Typed Json value instead of jsonObj.ContainsKey("Name")
+            if (jsonObj.ContainsKey(nameof(Person.Name)))
+            {
+                Console.WriteLine(jsonObj);
+            }
+
+        }
+        public static void NameOfExceptionHandling()
+        {
+            try
+            {
+                throw new Exception();
+            }
+            catch
+            {
+                // Typing return type instad of a hardcoded string.
+                Console.WriteLine("Method failed: " + nameof(NameOfExceptionHandling));
+                Console.WriteLine("Method failed: " + "NameOfExceptionHandling");
+            }
+
+        }
         private static int RandomNumber(int a, int b)
         {
             var number = Random.Shared.Next(a, b);
@@ -37,6 +68,7 @@ namespace CheatSheet
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[Random.Shared.Next(s.Length)]).ToArray());
         }
+
 
         // använd System.Text.Json; nyaste.
         public static string JsonSerializeObject()
