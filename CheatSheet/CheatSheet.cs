@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using DayOfWeek = CheatSheet.Model.DayOfWeek;
 
@@ -15,12 +16,8 @@ namespace CheatSheet
         private static string _startupPath = AppDomain.CurrentDomain.BaseDirectory;
         static async Task Main(string[] args)
         {
-
-            NullCoalescingOperator();
-
-            LINQIntersect();
-            //Task task1 = Task.Factory.StartNew(() => ThreadedTask("task1"));
-            //Task task2 = Task.Factory.StartNew(() => ThreadedTask("task2"));
+            // Get variable from appsettings in a azure function
+            //%name%
 
             Console.WriteLine();
             Console.Read();
@@ -28,13 +25,63 @@ namespace CheatSheet
 
 
 
+        public static void NameOfJsonContains()
+        {
+            string jsonString =
+                            @"{
+                              ""Name"": ""Peter"",
+                              ""Age"": 25
+                            }
+                            ";
+            var jsonObj = JsonNode.Parse(jsonString).AsObject();
+
+            //Typed Json value instead of jsonObj.ContainsKey("Name")
+            if (jsonObj.ContainsKey(nameof(Person.Name)))
+            {
+                Console.WriteLine(jsonObj);
+            }
+
+        }
+        public static void NameOfExceptionHandling()
+        {
+            try
+            {
+                throw new Exception();
+            }
+            catch
+            {
+                // Typing return type instad of a hardcoded string.
+                Console.WriteLine("Method failed: " + nameof(NameOfExceptionHandling));
+                Console.WriteLine("Method failed: " + "NameOfExceptionHandling");
+            }
+
+        }
+        private static int RandomNumber(int a, int b)
+        {
+            var number = Random.Shared.Next(a, b);
+            return number;
+        }
+
+        private static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[Random.Shared.Next(s.Length)]).ToArray());
+        }
+
+
         // använd System.Text.Json; nyaste.
         public static string JsonSerializeObject()
         {
             Person person = new Person() { Age = 19, Name = "Peter" };
+            Person person2 = new Person() { Age = 29, Name = "Jonas" };
+            string jsonObject = JsonSerializer.Serialize(person);
 
-            string jsonString = JsonSerializer.Serialize(person);
-            return jsonString;
+
+            List<Person> list = new List<Person>() { person, person2 };
+            string jsonList = JsonSerializer.Serialize(list);
+
+            return jsonObject;
         }
 
         public static Person JsonDeSerializeObject()
@@ -104,7 +151,7 @@ namespace CheatSheet
             var person0 = new Person();
             Person book1 = new Person();
 
-            //C# 9 Feature
+            //C# 9 Feature  
             // New way
             Person personNew = new();
 

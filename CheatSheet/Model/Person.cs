@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CheatSheet.Model
+﻿namespace CheatSheet.Model
 {
     public class Person
     {
         public string Name { get; set; }
         public int Age { get; set; }
     }
-    enum DayOfWeek
-    {
-        Monday,
-        Friday
-    }
 
+    enum DayOfWeek { Monday, Friday }
 }
