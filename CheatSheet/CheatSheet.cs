@@ -92,7 +92,8 @@ namespace CheatSheet
                               ""Age"": 25
                             }
                             ";
-            Person person = JsonSerializer.Deserialize<Person>(jsonString);
+            // Vanliga Newton jsoft är inte case sensitive men system.text är. Så lägg till den option
+            Person person = JsonSerializer.Deserialize<Person>(jsonString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
             return person;
         }
 
