@@ -131,6 +131,19 @@ namespace CheatSheet
         }
 
 
+        public static void LINQWhereFilter()
+        {
+            Person person = new Person() { Age = 19, Name = "Peter" };
+            Person person2 = new Person() { Age = 29, Name = "Jonas" };
+            List<Person> list = new List<Person>() { person, person2 };
+
+            // DO.
+            var DO = list.First(e => e.Name == "Peter");
+            //DONT.
+            var DONT = list.Where(e => e.Name == "Peter").FirstOrDefault();
+        }
+
+
         // Sätter ihop alla värden från två listor till en lista
         // Resultat blir Eva,Peter,Max
         public static void LINQConcat()
