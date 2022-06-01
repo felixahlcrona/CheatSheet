@@ -19,6 +19,7 @@ namespace CheatSheet
             // Get variable from appsettings in a azure function
             //%name%
 
+            await GetRequestAsync();
             Console.WriteLine();
             Console.Read();
         }
@@ -41,6 +42,25 @@ namespace CheatSheet
                 Console.WriteLine(jsonObj);
             }
 
+        }
+
+        public static async Task GetRequestAsync()
+        {
+            HttpClient client = new HttpClient();
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync("https://catfact.ninja/fact");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseMessage = await response.Content.ReadAsStringAsync();
+                    var data = JsonSerializer.Deserialize<CatFacts>(responseMessage, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
         public static void NameOfExceptionHandling()
         {
