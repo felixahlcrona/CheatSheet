@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlAgilityPack", "HtmlAgil
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{02F1F597-22A4-4D42-B08B-0D1CAD5B4F70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{71F93D60-C40A-4C36-B26B-527CB3C3ACBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.API", "Web.API\Web.API.csproj", "{B568BD5F-3C2E-46F7-8CE8-0886D15DB0E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{02F1F597-22A4-4D42-B08B-0D1CAD5B4F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02F1F597-22A4-4D42-B08B-0D1CAD5B4F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02F1F597-22A4-4D42-B08B-0D1CAD5B4F70}.Release|Any CPU.Build.0 = Release|Any CPU
-		{71F93D60-C40A-4C36-B26B-527CB3C3ACBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{71F93D60-C40A-4C36-B26B-527CB3C3ACBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{71F93D60-C40A-4C36-B26B-527CB3C3ACBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{71F93D60-C40A-4C36-B26B-527CB3C3ACBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B568BD5F-3C2E-46F7-8CE8-0886D15DB0E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B568BD5F-3C2E-46F7-8CE8-0886D15DB0E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B568BD5F-3C2E-46F7-8CE8-0886D15DB0E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B568BD5F-3C2E-46F7-8CE8-0886D15DB0E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

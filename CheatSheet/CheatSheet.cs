@@ -19,8 +19,11 @@ namespace CheatSheet
             // Get variable from appsettings in a azure function
             //%name%
 
-            await GetRequestAsync();
-            Console.WriteLine();
+
+            string nullable = null;
+
+
+            Console.WriteLine(nullable.Length);
             Console.Read();
         }
 
