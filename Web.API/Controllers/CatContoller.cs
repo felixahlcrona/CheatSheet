@@ -9,9 +9,9 @@ namespace Web.API.Controllers
     [Route("[controller]")]
     public class CatContoller : ControllerBase
     {
-        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IHttpClientFactory _httpClientFactory; //services.addhttpclient()
         private readonly ILogger<CatContoller> _logger;
-        private readonly IConfiguration _configuration;
+        private readonly IConfiguration _configuration; //appsettings.json
         public CatContoller(IHttpClientFactory httpClientFactory, ILogger<CatContoller> logger, IConfiguration configuration)
         {
             _httpClientFactory = httpClientFactory;
