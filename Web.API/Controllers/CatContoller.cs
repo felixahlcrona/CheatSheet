@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
-using System.Text.Json.Nodes;
 using Web.API.Model;
 
 namespace Web.API.Controllers
@@ -27,6 +26,8 @@ namespace Web.API.Controllers
 
             return cats;
         }
+
+
 
         [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<CatFacts> GetCats()
