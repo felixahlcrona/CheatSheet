@@ -31,6 +31,16 @@ namespace CheatSheet
         //När du kör async metoder kan du behöva köra "await InvokeAsync(StateHasChanged);" för att uppdatera ui statet. 
         //    Men annars kan du leka runt med onrender/oninitalized beroende på när de ska renderas. 
         //    Alla metoder som inte behöver vara async ska var icke async, annars kan de bli fel där med
+        // Också viktigt! Ibland om du ändrar saker i en list då känner inte blazor av ändringarna om de är en shallow copy t ex.
+
+        // Härifrån sätts DeviceList
+        //await GetDevicesAsync();
+
+        //var x = DeviceList;
+        //DeviceList = new List<DeviceViewModel>();
+        //DeviceList.AddRange(x);
+        // Så gör en helt ny lista och skriv över resultat i den, så de blir en deep copy. De reagerer blazor på.
+        //https://imgur.com/a/3ql8yJv
         //https://steven-giesel.com/blogPost/4fd1ba1d-f244-460e-8de4-06f2cc9c19cb
 
         public static void NameOfJsonContains()
